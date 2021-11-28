@@ -22,7 +22,16 @@ public class Electronic implements HouseholdItem{
 		this.weight = weight;
 		this.fragile = fragile;
 	}
-
+	@Override
+	public void accept(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.MovingCostElectronic(this);
+		
+	}
+	@Override
+	public void accept2(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.PackingInstructionElectronic(this);
+	}
+	
 	
 //Getters and Setters
 
@@ -61,6 +70,7 @@ public class Electronic implements HouseholdItem{
 
 	public void setFragile(Boolean fragile) {
 		this.fragile = fragile;}
+	
 	
 	
 	

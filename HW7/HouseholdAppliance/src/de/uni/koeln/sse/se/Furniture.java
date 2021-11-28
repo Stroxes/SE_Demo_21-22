@@ -21,6 +21,14 @@ public class Furniture implements HouseholdItem{
 		this.height = height;
 		this.weight = weight;
 	}
+	@Override
+	public void accept(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.MovingCostFurniture(this);
+	}
+	@Override
+	public void accept2(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.PackingInstructionFurniture(this);
+	}
 
 
 	

@@ -18,6 +18,15 @@ public class Glass implements HouseholdItem{
 		this.tickness = tickness;
 	
 	}
+	@Override
+	public void accept(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.MovingCostGlass(this);
+		
+	}
+	@Override
+	public void accept2(HouseholdItemVisitor householdItemVisitor) {
+		householdItemVisitor.PackingInstructionGlass(this);
+	}
 
 
 

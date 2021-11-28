@@ -11,7 +11,7 @@ public static void main(String[] args) {
 
 		//Initialise some household
 		List<HouseholdItem> householdItmes= new ArrayList<>();
-
+		HouseholdItemVisitor v= new Calculator();
 		
 		Electronic microwaveOven= new Electronic("Microwave Oven",37, 48, 27, 13, false);
 		Electronic tv= new Electronic("TV",122, 73, 15, 18, true);
@@ -26,6 +26,13 @@ public static void main(String[] args) {
 		
         List<HouseholdItem> namesList = Arrays.asList(microwaveOven,tv,wineGlass,coffeeTable,bed,cupboard );
         householdItmes.addAll(namesList);
+        for (int i = 0;i<householdItmes.size();i++){
+        	householdItmes.get(i).accept(v);
+        }
+        for (int i = 0;i<householdItmes.size();i++){
+        	householdItmes.get(i).accept2(v);
+        }
+        
 		
   
 }
